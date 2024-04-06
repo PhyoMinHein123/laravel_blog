@@ -1,0 +1,14 @@
+public function add(Request $request){
+
+        $fileName = time() . '.' . Request()->image->extension();
+        $request->image->storeAs('public/images', $fileName);
+
+        $users = new PostModel;
+        $users->title = Request()->title;
+        $users->body = Request()->body;
+        $users->image = $fileName;
+        $users->user_id = Request()->user;
+        $users->save();
+        return redirect('/post/list');
+
+    }

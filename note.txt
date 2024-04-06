@@ -1,0 +1,9 @@
+php artisan make:model PostModel -m 
+
+php artisan make:controller PostController
+
+php artisan tinker
+
+User::create(['name'=>'mgmg','email'=>'mgmg@gmail.com','password'=>'ps'])
+
+php artisan storage:link
